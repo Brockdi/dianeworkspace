@@ -49,4 +49,16 @@ public class HttpApplication extends AbstractVerticle {
         .putHeader(CONTENT_TYPE, "application/json; charset=utf-8")
         .end(response.encodePrettily());
   }
+  
+  private void goodbye(RoutingContext rc) {
+String name = rc.request().getParam("name");
+if (name == null) {
+name = "World";
+}
+JsonObject response = new JsonObject()
+.put("content", "Goodbye " + name);
+rc.response()
+.putHeader(CONTENT_TYPE, "application/json; charset=utf-8")
+.end(response.encodePrettily());
+}
 }
