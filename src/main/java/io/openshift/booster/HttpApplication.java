@@ -11,9 +11,9 @@ import static io.vertx.core.http.HttpHeaders.CONTENT_TYPE;
 
 public class HttpApplication extends AbstractVerticle {
 
-  protected static final String template = "Bonjour, %s!";
+  protected static final String template = "Bonjour hi, %s!";
 
-  @Override
+  @Override 
   public void start(Future<Void> future) {
     // Create a router object.
     Router router = Router.router(vertx);
